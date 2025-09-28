@@ -1,0 +1,28 @@
+<view class="container">
+  <!-- 标题 -->
+  <view class="title">欢迎登录</view>
+
+  <!-- 用户点击按钮选择头像 -->
+  <button class="avatar-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+    <image class="avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}" />
+  </button>
+
+  <!-- 输入昵称 -->
+  <input
+    class="nickname-input"
+    type="nickname"
+    placeholder="请输入昵称"
+    value="{{userInfo.nickName}}"
+    bindinput="onInputChange"
+  />
+
+  <!-- 登录按钮 -->
+  <button
+    class="login-btn"
+    type="primary"
+    bindtap="onLogin"
+    disabled="{{!hasUserInfo}}"
+  >
+    登录
+  </button>
+</view>
