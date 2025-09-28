@@ -37,43 +37,9 @@ Page({
 
     console.log('用户信息：', this.data.userInfo);
 
-    // 提示用户连接 Wi-Fi
-    wx.showModal({
-      title: '提示',
-      content: '请连接 Wi-Fi 以获得更好体验',
-      confirmText: '去连接',
-      cancelText: '稍后',
-      success: (res) => {
-        if (res.confirm) {
-          // 跳转到系统 Wi-Fi 设置界面
-          this.openSystemWifi();
-        } else {
-          console.log('用户选择稍后连接 Wi-Fi');
-        }
-      }
-    });
-  },
-
-  // 打开系统 Wi-Fi 设置界面
-  openSystemWifi() {
-    wx.startWifi({
-      success: () => {
-        wx.openSetting({
-          success: (res) => {
-            console.log('打开系统设置成功', res);
-          },
-          fail: (err) => {
-            console.error('打开系统设置失败', err);
-          }
-        });
-      },
-      fail: (err) => {
-        console.error('初始化 Wi-Fi 模块失败', err);
-        wx.showToast({
-          title: '无法开启 Wi-Fi，请检查权限',
-          icon: 'none'
-        });
-      }
+    // 跳转到普通页面
+    wx.switchTab({
+      url: '/pages/tabBar/AI/AI' // 替换为你想跳转的页面路径
     });
   }
 })

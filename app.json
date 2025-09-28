@@ -1,7 +1,13 @@
 {
   "pages": [
+    "pages/tabBar/Profile/Profile",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/tabBar/AI/AI",
+    "pages/tabBar/information/information",
+    "pages/tabBar/Find/Find",
+    "pages/tabBar/Shop/Shop"
+    
   ],
   "window": {
     "navigationBarTextStyle": "white",
@@ -10,13 +16,36 @@
     "backgroundColor": "#E6F0FF",
     "backgroundTextStyle": "light"
   },
-  "permission": {
-    "scope.userLocation": {
-      "desc": "扫码连WiFi需要获取您的位置信息"
-    }
-  },
   "style": "v2",
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "color": "#dbdbdb",
+    "selectedColor": "#000000",
+    "borderStyle": "black",
+    "backgroundColor": "#007AFF",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/AI/AI",
+        "text": "AI"
+      },
+      {
+        "pagePath": "pages/tabBar/information/information",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/tabBar/Find/Find",
+        "text": "寻物"
+      },
+      {
+        "pagePath": "pages/tabBar/Shop/Shop",
+        "text": "商城"
+      },
+      {
+        "pagePath": "pages/tabBar/Profile/Profile",
+        "text": "我的"
+      }
+    ]
+  }
 }
